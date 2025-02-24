@@ -1,0 +1,81 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Alkalmassagi-API dokumentáció",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://192.168.2.114:8881/"
+        }
+    ],
+    "paths": {
+        "/api/partner-emails": {
+            "get": {
+                "tags": [
+                    "Partner Emails"
+                ],
+                "summary": "List all partner emails",
+                "operationId": "9a0a4d11c1af3682e8382232c62e4685",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PartnerEmail"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized - Invalid API Key"
+                    },
+                    "404": {
+                        "description": "No partner emails found"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PartnerEmail": {
+                "title": "Partner Email",
+                "description": "Partner email model",
+                "properties": {
+                    "partner_name": {
+                        "type": "string",
+                        "example": "teszt ceg"
+                    },
+                    "partner_email": {
+                        "type": "string",
+                        "example": "partner@example.com"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "name": "X-API-KEY",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Partner Emails",
+            "description": "Partner Emails"
+        }
+    ]
+}
