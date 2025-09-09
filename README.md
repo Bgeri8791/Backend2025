@@ -39,12 +39,6 @@ Az alábbi változók értékeét célszerű megvizsgálni, hogy megfeleljen az 
 ```bash
 docker compose build
 ```
-# Docker futtatás
-```bash
-docker compose up -d
-```
-- A `-d` hatására detached módban indul, azaz a konténerek kimenete leválasztásra kerül a konzolról, így az továbbra is használható marad.
-
 ## Függőségek telepítése
 ```bash
 docker compose exec app composer install
@@ -54,3 +48,8 @@ docker compose exec app composer install
 ```bash
 docker compose exec app php artisan key:generate
 ```
+# Docker futtatás
+```bash
+docker compose up -d
+```
+- A `-d` hatására detached módban indul, azaz a konténerek kimenete leválasztásra kerül a konzolról, így az továbbra is használható marad.
