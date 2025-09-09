@@ -53,3 +53,9 @@ docker compose exec app php artisan key:generate
 docker compose up -d
 ```
 - A `-d` hatására detached módban indul, azaz a konténerek kimenete leválasztásra kerül a konzolról, így az továbbra is használható marad.
+
+## Fejlesztői infó
+```text
+Fejlesztő: Buzási Gergő
+Repo: Backend2025
+```
